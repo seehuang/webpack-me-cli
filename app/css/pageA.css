@@ -1,0 +1,22 @@
+/*
+* @Author: sugarman
+* @Date:   2018-02-10 14:27:02
+ * @Last Modified by:   sugarman
+ * @Last Modified time: 2018-02-11 14:16:50
+*/
+.pageA-btn{
+	width: 100px;
+	height: 50px;
+	color: #fff;
+	text-align: center;
+	line-height: 50px;
+	background: url(../img/car.png);
+	background-size: cover;
+
+}
+
+.swiper-container{
+	width: 400px;
+	height: 300px;
+	border:1px solid #ccc;
+}
