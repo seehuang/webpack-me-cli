@@ -2,7 +2,7 @@
 * @Author: hc
 * @Date:   2018-02-11 09:15:25
 * @Last Modified by:   hc
-* @Last Modified time: 2018-02-11 17:15:01
+* @Last Modified time: 2018-02-12 14:24:59
 */
 const path = require("path");
 
@@ -34,9 +34,9 @@ module.exports = {
 	entry:Entries,
 	devtool:"cheap-module-source-map",
 	output:{
-		filename:"js/[name].bundle.[hash].js",
-		path:path.resolve(__dirname,"../dist"),
-		libraryTarget : 'var'
+		filename:"js/[name].bundle.[hash:5].js",
+		path:path.resolve(__dirname,"../dist")
+		//libraryTarget : 'var'
 	},
 	resolve:{
 		alias:{
@@ -78,27 +78,44 @@ module.exports = {
 				}
 			},
 			{
-				test:/\.(png|svg|jpg|gif)$/,
+				test: /\.(png|jpg|gif|svg)$/,
 				use:{
 					loader:"file-loader",
 					options:{
 						//打包生成图片的名字
-						name:"[name].[ext]",
-						outputPath:config.imgOutputPath
+						name:"img/[name].[ext]"
+						//outputPath:config.imgOutputPath
 					}
+					
 				}
 			},
 			{
 				test:/\.(woff|woff2|eot|ttf|otf)$/,
 				use:["file-loader"]
+			},
+			{
+				test:/.html$/,
+				use:{
+					loader:"html-loader",
+					options:{
+						attrs:['img:src'],
+						minimize: false,
+						collapseWhitespace: false
+					}
+				}
 			}
 		]
 	},
 	plugins:[
 		//自动清理dist文件夹
-		new CleanWebpackPlugin(["dist"]),
+		new CleanWebpackPlugin(['dist'],{
+			//当前clean认为的根目录为/config/，需要设定根目录为项目根目录
+			root:path.resolve(__dirname,"../")
+		}),
 		//将css抽取到某个文件夹
-		new ExtractTextPlugin(config.cssOutputPath),
+		new ExtractTextPlugin({
+			filename:"css/[name].[hash:5].css",
+		}),
 		//自动生成HTML插件,ES6解构赋值
 		...HTMLPlugins
 	]

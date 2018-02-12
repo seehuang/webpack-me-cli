@@ -2,7 +2,7 @@
 * @Author: hc
 * @Date:   2018-02-11 10:09:06
 * @Last Modified by:   hc
-* @Last Modified time: 2018-02-11 13:39:40
+* @Last Modified time: 2018-02-12 09:29:11
 */
 
 //引入基本配置
@@ -24,7 +24,7 @@ module.exports = webpackMerge(webpackBase,{
 		new webpack.optimize.CommonsChunkPlugin({
 			//chunk名为commons
 			name:"commons",
-			filename:"[name].bundle.js"
+			filename:"js/[name].bundle.[hash:5].js"
 		})
 	]
 })
