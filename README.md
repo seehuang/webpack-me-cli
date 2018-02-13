@@ -15,19 +15,65 @@
 
 ## 构建目标
 
-- [ ] eslint代码检查
-- [ ] ES6代码编译
-- [ ] js模块打包，公共，业务代码分开打包，并加入hash
-- [ ] 提取css文件，添加前缀，压缩代码，加入hash
-- [ ] 提取html模板文件，并自动添加css，js
-- [ ] 提取图片文件，压缩图片
-- [ ] 提取字体文件
-- [ ] 开启本地服务调试
-- [ ] 加入第三方非模块化库或者插件（如jquery，swiper）
-- [ ] 开启本地server
-- [ ] 使用source map调试
+- [x] eslint代码检查
+- [x] ES6代码编译
+- [x] js模块打包，公共，业务代码分开打包，并加入hash
+- [x] 提取css文件，添加前缀，压缩代码，加入hash
+- [x] 提取html模板文件，并自动添加css，js
+- [x] 提取图片文件，压缩图片
+- [x] 提取字体文件
+- [x] 开启本地服务调试
+- [x] 加入第三方非模块化库或者插件（如jquery，swiper）
+- [x] 开启本地server
+- [x] 使用source map调试
 
-## 项目结构
+## 项目结构 
+
+ <pre>
+│  .babelrc
+│  .eslintrc.js
+│  .gitignore
+│  package.json
+│  postcss.config.js
+│  tree.txt
+│  webpack.config.js 
+│  
+├─app //项目总路径
+│  ├─common
+│  │      common.js
+│  │      
+│  ├─css
+│  │      base.css
+│  │      pageA.css
+│  │      pageB.css
+│  │      swiper2.7.6.css
+│  │      
+│  ├─html //项目模板文件
+│  │      pageA.html
+│  │      pageB.html
+│  │      
+│  ├─img
+│  │      car.png
+│  │      car2.png
+│  │      car3.png
+│  │      
+│  ├─js
+│  │      pageA.js
+│  │      pageB.js
+│  │      
+│  └─lib //第三方库或者插件
+│          jquery-1.10.1.min.js
+│          swiper2.7.6.min.js
+│          
+└─config
+        config.js
+        webpack.config.base.js
+        webpack.config.dev.js
+        webpack.config.lint.js
+        webpack.config.prod.js
+ </pre>
+
+         
 
 ## 运行项目
 
