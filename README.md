@@ -77,8 +77,56 @@
 
 ## 运行项目
 
-## 项目依赖
+<pre>
+npm run dev 开发环境，启用服务，浏览器输入localhost:8080/pageA.html
+npm run build 生产环境，项目被打包到dist文件夹
+npm run lint 启用eslint检测代码
+</pre>
 
+## 项目依赖
+<pre>
+1.安装 webpack 和 webpack-dev-server
+npm install webpack webpack-dev-server --save-dev
+
+2.安装 webpack-merge
+npm install webpack-merge --save-dev
+该插件用来对 webpack 配置进行合并操作。
+
+3.安装 babel 相关插件
+npm install babel-core babel-loader babel-preset-env babel-plugin-transform-es2015-spread --save-dev
+这系列插件用来对 ES6 语法进行转换。
+
+4.安装样式处理相关插件
+npm install css-loader style-loader postcss-loader autoprefixer --save-dev
+这系列插件用来处理 CSS 样式，其中 autoprefixer 是 postcss 的一个插件，用来自动给 CSS 样式添加前缀。
+
+5.安装 file-loader
+npm install file-loader --save-dev
+该插件将在导入图片、字体等文件时发挥作用，主要是针对css中的url。
+
+6.安装 ESLint 相关的插件
+npm install eslint eslint-loader --save-dev
+这些插件用来对 JavaScript 代码进行检查。
+
+7.安装 html-webpack-plugin 插件
+npm install html-webpack-plugin --save-dev
+该插件用来自动生成 HTML 文件。
+
+8.安装 extract-text-webpack-plugin 插件
+npm install extract-text-webpack-plugin --save-dev
+该插件用来将 CSS 抽取到独立的文件。
+
+9.安装 clean-webpack-plugin 插件
+npm install clean-webpack-plugin --save-dev
+该插件用来对 dist 文件夹进行清理工作，每次打包时先清理之前的 dist 文件夹。
+
+10.安装http-server
+npm install http-server --save-dev
+
+11.安装html-loader
+npm install html-loader --save-dev
+该插件用来提取html中的img标签src图片
+</pre>
 ## 运行结果
 
 ## 构建完成
