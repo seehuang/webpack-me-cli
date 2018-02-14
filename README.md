@@ -128,7 +128,8 @@ npm install html-loader --save-dev
 该插件用来提取html中的img标签src图片
 </pre>
 ## 运行结果
+![image](https://user-images.githubusercontent.com/16111288/36187405-1282a6d0-1180-11e8-9b72-1c7b1b180f9c.gif)
 
-## 构建完成
+
 
 
